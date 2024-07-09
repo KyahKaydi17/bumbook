@@ -2,7 +2,7 @@
 
 body {
     background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -11,8 +11,27 @@ body {
 header {
     background-color: #ff66b2;
     color: white;
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     margin-bottom: 20px;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
 }
 
 .news-feed {
@@ -77,16 +96,23 @@ header {
     max-height: none;
 }
 
+.post-text.collapsed::after {
+    content: '...';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    padding: 0 10px;
+}
+
 .see-more-button {
-    display: none;
     background-color: transparent;
     border: none;
     color: #ff66b2;
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-    position: absolute;
-    bottom: 10px;
+    display: none;
 }
 
 .post-text.collapsed + .see-more-button {
@@ -106,16 +132,17 @@ header {
     border-top: 1px solid #ddd;
 }
 
-.post-footer button {
-    background-color: #ff66b2;
-    color: white;
-    border: none;
+.footer-button {
+    background-color: transparent;
+    border: 1px solid #ff66b2;
     border-radius: 20px;
+    color: #ff66b2;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
-.post-footer button:hover {
-    background-color: #ff3385;
+.footer-button:hover {
+    background-color: #ff66b2;
+    color: white;
 }
